@@ -258,7 +258,7 @@ const transpile = {
   ],
   // Track external dependencies for import injection
   externalDependencies: (filepath) => [
-    /(.*)(THREE|EventEmitter2|ROSLIB|ColladaLoader|OBJLoader|MTLLoader|STLLoader).*/g,
+    /(.*)(THREE|EventEmitter3|ROSLIB|ColladaLoader|OBJLoader|MTLLoader|STLLoader).*/g,
     (match, $preStuffs, $dep) => {
 
       if (/^\s*(?:\*|\/\/)/.test($preStuffs)) {
@@ -536,8 +536,8 @@ const transpile = {
               importString = "import * as ROSLIB from 'roslib';"
               break;
             }
-            case 'EventEmitter2': {
-              importString = "import EventEmitter2 from 'eventemitter2';"
+            case 'EventEmitter3': {
+              importString = "import EventEmitter3 from 'eventemitter3';"
               break;
             }
             case 'ColladaLoader': {
